@@ -17,13 +17,17 @@ Many sections show applications that require smaller specialized Python modules.
 
 ### Structure
 
-*PCV/* the code.
+*PCV/*  the code.
 
-*pcv_book/* contains a clean folder with the code exactly as used in the book at time of publication.
+*pcv_book/*  contains a clean folder with the code exactly as used in the book at time of publication.
 
-*examples/* contains sample code.
+*examples/*  contains sample code. Some examples use data available at [programmingcomputervision.com](http://programmingcomputervision.com/).
 
+### Installation
 
+Open a terminal in the PCV directory and run (with sudo if needed on your system):
+
+	python setup.py install
 
 ### License
 

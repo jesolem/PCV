@@ -1,7 +1,7 @@
 from PIL import Image
-import os
 from numpy import *
 from pylab import *
+import os
 
 
 def process_image(imagename,resultname,params="--edge-thresh 10 --peak-thresh 5"):

@@ -3,7 +3,7 @@ from scipy import ndimage
 from pylab import *
 from numpy import *
 
-import homography
+from PCV.geometry import homography
     
 
 def image_in_image(im1,im2,tp):

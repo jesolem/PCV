@@ -1,7 +1,8 @@
 from PIL import Image
-import os
 from numpy import *
-import sift
+import os
+
+from PCV.localdescriptors import sift
 
 
 def process_image_dsift(imagename,resultname,size=20,steps=10,force_orientation=False,resize=None):

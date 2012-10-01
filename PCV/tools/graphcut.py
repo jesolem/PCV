@@ -4,7 +4,7 @@ from numpy import *
 from pygraph.classes.digraph import digraph
 from pygraph.algorithms.minmax import maximum_flow
 
-import bayes
+from PCV.tools import bayes
 
 """ 
 Graph Cut image segmentation using max-flow/min-cut. 

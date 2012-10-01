@@ -51,7 +51,7 @@ def H_from_ransac(fp,tp,model,maxiter=1000,match_theshold=10):
         
         input: fp,tp (3*n arrays) points in hom. coordinates. """
     
-    import ransac
+    from PCV.tools import ransac
     
     # group corresponding points
     data = vstack((fp,tp))

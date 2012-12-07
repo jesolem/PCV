@@ -29,6 +29,12 @@ Open a terminal in the PCV directory and run (with sudo if needed on your system
 
 	python setup.py install
 
+Now you should be able to do
+
+	import PCV
+	
+in your Python session or script. Try one of the sample code examples to check that the installation works.
+
 ### License
 
 All code in this project is provided as open source under the BSD license (2-clause "Simplified BSD License"). See LICENSE.txt. 

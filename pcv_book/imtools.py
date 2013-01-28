@@ -17,13 +17,17 @@ def compute_average(imlist):
     
     # open first image and make into array of type float
     averageim = array(Image.open(imlist[0]), 'f') 
+
+    skipped = 0
     
     for imname in imlist[1:]:
         try: 
             averageim += array(Image.open(imname))
         except:
             print imname + "...skipped"  
-    averageim /= len(imlist) 
+            skipped += 1
+
+    averageim /= (len(imlist) - skipped)
     
     # return average as uint8
     return array(averageim, 'uint8')

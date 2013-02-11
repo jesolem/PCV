@@ -109,7 +109,7 @@ def plot_matches(im1,im2,locs1,locs2,matchscores,show_below=True):
     cols1 = im1.shape[1]
     for i,m in enumerate(matchscores):
         if m>0:
-            plot([locs1[i][1],locs2[m][1]+cols1],[locs1[i][0],locs2[m][0]],'c')
+            plot([locs1[i][0],locs2[m][0]+cols1],[locs1[i][1],locs2[m][1]],'c')
     axis('off')
 
 

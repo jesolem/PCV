@@ -5,11 +5,11 @@ from scipy.misc import imsave
 from PCV.tools import rof
 
 """
-Simple example of Chan-Vese segmentation.
+Simple example of Chan-Vese segmentation from Section 9.3.
 Load an image, segment in two classes and save result.
 """
 
-im = array(Image.open('fisherman_tiny.jpg').convert('L')) 
+im = array(Image.open('../data/houses.png').convert('L')) 
 U,T = rof.denoise(im,im,tolerance=0.001)
 t = 0.4
 

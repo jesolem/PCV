@@ -3,6 +3,9 @@ from numpy import *
 
 from PCV.imagesearch import imagesearch
 
+"""
+This is the image search demo in Section 7.6.
+"""
 
 class SearchDemo:
     

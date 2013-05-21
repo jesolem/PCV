@@ -5,11 +5,11 @@ from PIL import Image
 from PCV.localdescriptors import sift
 
 """
-This is the twosided SIFT feature matching example from section 2.2 (p 44).
+This is the twosided SIFT feature matching example from Section 2.2 (p 44).
 """
 
-imname1 = 'climbing_1_small.jpg'
-imname2 = 'climbing_2_small.jpg'
+imname1 = '../data/climbing_1_small.jpg'
+imname2 = '../data/climbing_2_small.jpg'
 
 # process and save features to file
 sift.process_image(imname1, imname1+'.sift')

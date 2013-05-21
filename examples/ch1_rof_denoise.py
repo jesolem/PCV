@@ -6,6 +6,10 @@ from scipy.misc import imsave
 
 from PCV.tools import rof
 
+"""
+This is the de-noising example using ROF in Section 1.5.
+"""
+
 # create synthetic image with noise
 im = zeros((500,500))
 im[100:400,100:400] = 128

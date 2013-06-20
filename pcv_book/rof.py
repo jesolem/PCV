@@ -15,8 +15,8 @@ def denoise(im,U_init,tolerance=0.1,tau=0.125,tv_weight=100):
 
     # initialize
     U = U_init
-    Px = im #x-component to the dual field
-    Py = im #y-component of the dual field
+    Px = zeros((m, n)) #x-component to the dual field
+    Py = zeros((m, n)) #y-component of the dual field
     error = 1 
     
     while (error > tolerance):

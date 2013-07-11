@@ -230,7 +230,7 @@ def F_from_ransac(x1,x2,model,maxiter=5000,match_theshold=1e-6):
 
         input: x1,x2 (3*n arrays) points in hom. coordinates. """
 
-    import ransac
+    from PCV.tools import ransac
 
     data = vstack((x1,x2))
     

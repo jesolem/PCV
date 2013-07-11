@@ -9,7 +9,7 @@ This is the morphology counting objects example in Section 1.4.
 
 # load image and threshold to make sure it is binary
 im = array(Image.open('../data/houses.png').convert('L'))
-im = 1*(im<128)
+im = (im<128)
 
 labels, nbr_objects = measurements.label(im)
 print "Number of objects:", nbr_objects

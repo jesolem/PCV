@@ -22,7 +22,7 @@ def compute_harris_response(im,sigma=3):
     Wdet = Wxx*Wyy - Wxy**2
     Wtr = Wxx + Wyy
     
-    return Wdet / (Wtr*Wtr)
+    return Wdet / Wtr
    
     
 def get_harris_points(harrisim,min_dist=10,threshold=0.1):
@@ -40,8 +40,8 @@ def get_harris_points(harrisim,min_dist=10,threshold=0.1):
     # ...and their values
     candidate_values = [harrisim[c[0],c[1]] for c in coords]
     
-    # sort candidates
-    index = argsort(candidate_values)
+    # sort candidates (reverse to get descending order)
+    index = argsort(candidate_values)[::-1]
     
     # store allowed point locations in array
     allowed_locations = zeros(harrisim.shape)

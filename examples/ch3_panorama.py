@@ -40,9 +40,6 @@ def convert_points(j):
     ndx2 = [int(matches[j][i]) for i in ndx]
     tp = homography.make_homog(l[j][ndx2,:2].T) 
     
-    # switch x and y - TODO this should move elsewhere
-    fp = vstack([fp[1],fp[0],fp[2]])
-    tp = vstack([tp[1],tp[0],tp[2]])
     return fp,tp
 
 
@@ -69,13 +66,13 @@ im1 = array(Image.open(imname[1]), "uint8")
 im2 = array(Image.open(imname[2]), "uint8")
 im_12 = warp.panorama(H_12,im1,im2,delta,delta)
 
-im1 = array(Image.open(imname[0]), "f")
+im1 = array(Image.open(imname[0]), "uint8")
 im_02 = warp.panorama(dot(H_12,H_01),im1,im_12,delta,delta)
 
-im1 = array(Image.open(imname[3]), "f")
+im1 = array(Image.open(imname[3]), "uint8")
 im_32 = warp.panorama(H_32,im1,im_02,delta,delta)
 
-im1 = array(Image.open(imname[4]), "f")
+im1 = array(Image.open(imname[4]), "uint8")
 im_42 = warp.panorama(dot(H_32,H_43),im1,im_32,delta,2*delta)
 
 

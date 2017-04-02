@@ -65,10 +65,10 @@ def compute_fundamental(x1,x2):
     # build matrix for equations
     A = zeros((n,9))
     for i in range(n):
-        A[i] = [x1[0,i]*x2[0,i], x1[0,i]*x2[1,i], x1[0,i]*x2[2,i],
-                x1[1,i]*x2[0,i], x1[1,i]*x2[1,i], x1[1,i]*x2[2,i],
-                x1[2,i]*x2[0,i], x1[2,i]*x2[1,i], x1[2,i]*x2[2,i] ]
-            
+        A[i] = [x1[0,i]*x2[0,i], x1[1,i]*x2[0,i], x1[2,i]*x2[0,i],
+                x1[0,i]*x2[1,i], x1[1,i]*x2[1,i], x1[2,i]*x2[1,i],
+                x1[0,i]*x2[2,i], x1[1,i]*x2[2,i], x1[2,i]*x2[2,i] ]
+
     # compute linear least square solution
     U,S,V = linalg.svd(A)
     F = V[-1].reshape(3,3)

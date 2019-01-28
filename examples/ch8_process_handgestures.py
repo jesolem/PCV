@@ -29,7 +29,7 @@ for filename in imlist:
 # show an image with features
 l,d = sift.read_features_from_file(featfile)
 im = array(Image.open(filename).resize((50,50)))
-print im.shape
+print(im.shape)
 
 figure()
 sift.plot_features(im, l, True)

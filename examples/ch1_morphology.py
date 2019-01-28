@@ -12,10 +12,10 @@ im = array(Image.open('../data/houses.png').convert('L'))
 im = (im<128)
 
 labels, nbr_objects = measurements.label(im)
-print "Number of objects:", nbr_objects
+print("Number of objects:", nbr_objects)
 
 # morphology - opening to separate objects better
 im_open = morphology.binary_opening(im,ones((9,5)),iterations=2) 
 
 labels_open, nbr_objects_open = measurements.label(im_open)
-print "Number of objects:", nbr_objects_open
+print("Number of objects:", nbr_objects_open)

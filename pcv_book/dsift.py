@@ -34,5 +34,5 @@ def process_image_dsift(imagename,resultname,size=20,steps=10,force_orientation=
         cmmd = str("sift "+imagename+" --output="+resultname+
                     " --read-frames=tmp.frame")
     os.system(cmmd)
-    print 'processed', imagename, 'to', resultname
+    print('processed', imagename, 'to', resultname)
 

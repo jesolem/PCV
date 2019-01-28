@@ -42,7 +42,7 @@ class Indexer(object):
             project on vocabulary and add to database. """
             
         if self.is_indexed(imname): return
-        print 'indexing', imname
+        print('indexing', imname)
         
         # get the imid
         imid = self.get_id(imname)

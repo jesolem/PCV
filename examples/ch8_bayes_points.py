@@ -31,7 +31,7 @@ with open('../data/points_normal_test.pkl', 'r') as f:
     labels = pickle.load(f)
 
 # test on the 10 first points
-print bc.classify(class_1[:10])[0]
+print(bc.classify(class_1[:10])[0])
 
 # define function for plotting
 def classify(x, y, bc=bc):

@@ -16,7 +16,7 @@ def process_image(imagename,resultname,params="--edge-thresh 10 --peak-thresh 5"
     cmmd = str("sift "+imagename+" --output="+resultname+
                 " "+params)
     os.system(cmmd)
-    print 'processed', imagename, 'to', resultname
+    print('processed', imagename, 'to', resultname)
 
 
 def read_features_from_file(filename):

@@ -24,7 +24,7 @@ def compute_average(imlist):
         try: 
             averageim += array(Image.open(imname))
         except:
-            print imname + "...skipped"  
+            print(imname + "...skipped")
             skipped += 1
 
     averageim /= (len(imlist) - skipped)

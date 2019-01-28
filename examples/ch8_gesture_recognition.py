@@ -54,20 +54,20 @@ def print_confusion(res,labels,classnames):
     for i in range(len(test_labels)):
         confuse[class_ind[res[i]],class_ind[test_labels[i]]] += 1
 
-    print 'Confusion matrix for'
-    print classnames
-    print confuse
+    print('Confusion matrix for')
+    print(classnames)
+    print(confuse)
 
 
 # read training data
 ####################
 features,labels = read_gesture_features_labels('../data/hand_gesture/train/')
-print 'training data is:', features.shape, len(labels)
+print('training data is:', features.shape, len(labels))
 
 # read test data
 ####################
 test_features,test_labels = read_gesture_features_labels('../data/hand_gesture/test/')
-print 'test data is:', test_features.shape, len(test_labels)
+print('test data is:', test_features.shape, len(test_labels))
 
 classnames = unique(labels)
 nbr_classes = len(classnames)
@@ -129,6 +129,6 @@ if False:
 
 # accuracy
 acc = sum(1.0*(res==test_labels)) / len(test_labels)
-print 'Accuracy:', acc
+print('Accuracy:', acc)
 
 print_confusion(res,test_labels,classnames)

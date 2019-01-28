@@ -9,7 +9,7 @@ def cluster(S,k,ndim):
     
     # check for symmetry
     if sum(abs(S-S.T)) > 1e-10:
-        print 'not symmetric'
+        print('not symmetric')
     
     # create Laplacian matrix
     rowsum = sum(abs(S),axis=0)

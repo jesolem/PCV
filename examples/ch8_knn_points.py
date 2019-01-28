@@ -28,11 +28,13 @@ with open('../data/points_normal_test.pkl', 'r') as f:
     labels = pickle.load(f)
 
 # test on the first point
-print model.classify(class_1[0])
+print(model.classify(class_1[0]))
+
 
 # define function for plotting
 def classify(x, y, model=model):
     return array([model.classify([xx,yy]) for (xx,yy) in zip(x,y)])
+
 
 # plot the classification boundary
 imtools.plot_2D_boundary([-6,6,-6,6], [class_1,class_2], classify, [1,-1])

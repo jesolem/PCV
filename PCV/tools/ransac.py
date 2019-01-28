@@ -80,28 +80,27 @@ return bestfit
     best_inlier_idxs = None
     while iterations < k:
         maybe_idxs, test_idxs = random_partition(n,data.shape[0])
-        maybeinliers = data[maybe_idxs,:]
+        maybeinliers = data[maybe_idxs, :]
         test_points = data[test_idxs]
         maybemodel = model.fit(maybeinliers)
-        test_err = model.get_error( test_points, maybemodel)
-        also_idxs = test_idxs[test_err < t] # select indices of rows with accepted points
-        alsoinliers = data[also_idxs,:]
+        test_err = model.get_error(test_points, maybemodel)
+        also_idxs = test_idxs[test_err < t]  # select indices of rows with accepted points
+        alsoinliers = data[also_idxs, :]
         if debug:
-            print 'test_err.min()',test_err.min()
-            print 'test_err.max()',test_err.max()
-            print 'numpy.mean(test_err)',numpy.mean(test_err)
-            print 'iteration %d:len(alsoinliers) = %d'%(
-                iterations,len(alsoinliers))
+            print('test_err.min()', test_err.min())
+            print('test_err.max()', test_err.max())
+            print('numpy.mean(test_err)', numpy.mean(test_err))
+            print('iteration %d:len(alsoinliers) = %d' % (iterations, len(alsoinliers)))
         if len(alsoinliers) > d:
-            betterdata = numpy.concatenate( (maybeinliers, alsoinliers) )
+            betterdata = numpy.concatenate((maybeinliers, alsoinliers))
             bettermodel = model.fit(betterdata)
-            better_errs = model.get_error( betterdata, bettermodel)
-            thiserr = numpy.mean( better_errs )
+            better_errs = model.get_error(betterdata, bettermodel)
+            thiserr = numpy.mean(better_errs)
             if thiserr < besterr:
                 bestfit = bettermodel
                 besterr = thiserr
-                best_inlier_idxs = numpy.concatenate( (maybe_idxs, also_idxs) )
-        iterations+=1
+                best_inlier_idxs = numpy.concatenate((maybe_idxs, also_idxs))
+        iterations += 1
     if bestfit is None:
         raise ValueError("did not meet fit acceptance criteria")
     if return_all:

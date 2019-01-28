@@ -20,4 +20,4 @@ for im in j['photos']:
 for url in imurls:
     image = urllib.URLopener()
     image.retrieve(url, os.path.basename(urlparse.urlparse(url).path)) 
-    print 'downloading:', url
+    print('downloading:', url)

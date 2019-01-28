@@ -4,7 +4,7 @@ from numpy import *
 from pylab import *
 
 
-def process_image(imagename,resultname,params="--edge-thresh 10 --peak-thresh 5"):
+def process_image(imagename, resultname, params="--edge-thresh 10 --peak-thresh 5"):
     """ Process an image and save the results in a file. """
 
     if imagename[-3:] != 'pgm':
@@ -13,22 +13,21 @@ def process_image(imagename,resultname,params="--edge-thresh 10 --peak-thresh 5"
         im.save('tmp.pgm')
         imagename = 'tmp.pgm'
 
-    cmmd = str("sift "+imagename+" --output="+resultname+
-                " "+params)
+    cmmd = str("sift " + imagename + " --output=" + resultname + " " + params)
     os.system(cmmd)
-    print 'processed', imagename, 'to', resultname
+    print('processed', imagename, 'to', resultname)
 
 
 def read_features_from_file(filename):
     """ Read feature properties and return in matrix form. """
-    
+
     f = loadtxt(filename)
-    return f[:,:4],f[:,4:] # feature locations, descriptors
+    return f[:, :4], f[:, 4:]  # feature locations, descriptors
 
 
-def write_features_to_file(filename,locs,desc):
+def write_features_to_file(filename, locs, desc):
     """ Save feature location and descriptor to file. """
-    savetxt(filename,hstack((locs,desc)))
+    savetxt(filename, hstack((locs, desc)))
     
 
 def plot_features(im,locs,circle=False):

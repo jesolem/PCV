@@ -64,7 +64,7 @@ def histeq(im,nbr_bins=256):
     
 def plot_2D_boundary(plot_range,points,decisionfcn,labels,values=[0]):
     """    Plot_range is (xmin,xmax,ymin,ymax), points is a list
-        of class points, decisionfcn is a funtion to evaluate, 
+        of class points, decisionfcn is a function to evaluate, 
         labels is a list of labels that decisionfcn returns for each class, 
         values is a list of decision contours to show. """
         
